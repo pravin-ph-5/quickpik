@@ -1,6 +1,6 @@
 # hah om sai ram om bhaskaraaya namaha om namaha sivayaaa 
 
-name: Deploy
+name: Deploy Vite Site to GitHub Pages
 
 on:
   push:
@@ -8,44 +8,32 @@ on:
       - main
 
 jobs:
-  build:
-    name: Build
+  build-and-deploy:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repo
+      # Use the latest version of checkout
+      - name: Checkout repository
         uses: actions/checkout@v3
 
-      - name: Setup Node
+      # Use Node.js version 20
+      - name: Set up Node.js
         uses: actions/setup-node@v3
+        with:
+          node-version: 20
 
+      # Install dependencies
       - name: Install dependencies
-        uses: bahmutov/npm-install@v1
+        run: npm install
 
+      # Build the project
       - name: Build project
         run: npm run build
 
-      - name: Upload production-ready build files
-        uses: actions/upload-artifact@v3
-        with:
-          name: production-files
-          path: ./dist
-
-  deploy:
-    name: Deploy
-    needs: build
-    runs-on: ubuntu-latest
-    if: github.ref == 'refs/heads/main'
-
-    steps:
-      - name: Download artifact
-        uses: actions/download-artifact@v3
-        with:
-          name: production-files
-          path: ./dist
-
+      # Deploy to GitHub Pages using the latest version of peaceiris action
       - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v3
+        uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./dist
+
