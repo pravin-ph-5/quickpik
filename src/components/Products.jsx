@@ -1,6 +1,8 @@
+/* eslint-disable no-unused-vars */
 // hah om sai ram om bhaskaraya namaha om namaha sivaayaaa
 
-import { useState } from 'react';
+import React from 'react';
+import{ useState } from 'react';
 import { productItems } from '../utils/ProductData.js';
 
 const ProductsSection = () => {

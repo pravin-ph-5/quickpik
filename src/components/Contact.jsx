@@ -1,5 +1,7 @@
+/* eslint-disable no-unused-vars */
 // hah om sai ram om bhaskaraaya namaha om namaha sivayaa
 
+import React from 'react';
 import { FaEnvelope, FaPhone, FaWhatsapp, FaInstagram, FaLinkedin, FaYoutube } from 'react-icons/fa'; // Importing Icons
 
 const ContactSection = () => {

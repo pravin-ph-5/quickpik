@@ -1,6 +1,7 @@
 // hah om sai ram om bhaskarayaa namaha om namaha sivayaa
 
-
+// eslint-disable-next-line no-unused-vars
+import React from 'react';
 import aboutImage from '../assets/About_Img.jpg'; // Replace with the actual image in your assets folder
 
 const AboutSection = () => {

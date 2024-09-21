@@ -1,5 +1,7 @@
+/* eslint-disable no-unused-vars */
 // hah om sai ram om bhaskarayaa namaha om namaha sivayaa
 
+import React from 'react';
 import { useState, useEffect } from "react";
 import { heroItems } from "../utils/HeroData.js";
 
